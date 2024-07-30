@@ -1,6 +1,8 @@
 import axios from "axios";
-import React from "react";
+import { useState } from "react";
+
 const App = () => {
+  const [products, setproducts] = useState([]);
   
   const getproducts = () => {
     const api = "https://fakestoreapi.com/products";
@@ -9,6 +11,7 @@ const App = () => {
     .get(api)
     .then((products) => {
       console.log(products);
+      setproducts(products.data)
     })
     .catch(err => console.log (err));
   };
@@ -30,7 +33,7 @@ const App = () => {
     .catch((err) => console.log (err));
   };
 
-
+console.log(products)
   return (
   <div className="pt-[5%] pl-[5%]">
   <button 
@@ -48,6 +51,14 @@ const App = () => {
   >
     Save new Product in API
   </button>
+
+  <hr className="my-10"/>
+  <ul>
+    <Li className="w-1/4 p-5 bg-red-200 rounded" >Product Name</Li>
+    <Li>Product Name</Li>
+
+  </ul>
+
    </div>)
 
 }
