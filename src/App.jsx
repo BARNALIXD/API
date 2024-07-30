@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import React from "react";
 const App = () => {
   
   const getproducts = () => {
@@ -22,7 +22,7 @@ const App = () => {
       price: 13.5,
       description: 'lorem ipsum set',
       image: 'https://i.pravatar.cc',
-      category: 'electronic'
+      category: 'electronic',
     })
     .then((res) => { 
       console.log(res);
@@ -40,6 +40,14 @@ const App = () => {
     Call Product API
   </button>
     
+    <br /> <br />
+
+    <button 
+  onClick={addproducts}
+  className="px-5 py-2 bg-red-300 rounded"
+  >
+    Save new Product in API
+  </button>
    </div>)
 
 }
